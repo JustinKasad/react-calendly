@@ -8,6 +8,7 @@ import {
 export interface ICalendly {
   initInlineWidget(options: {
     url: string;
+    prefill: Object;
     parentElement: HTMLElement;
   }): void;
   showPopupWidget(url: string): void;
