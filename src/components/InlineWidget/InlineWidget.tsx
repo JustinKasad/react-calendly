@@ -4,7 +4,12 @@ import { CALENDLY_SCRIPT_SOURCE } from "../../constants";
 
 export interface Props {
   url: string;
-  prefill?: Object;
+  prefill?: {
+    name?: string;
+    firstname?: string;
+    lastname?: string;
+    email?: string;
+  };
   styles?: React.CSSProperties | undefined;
 }
 
