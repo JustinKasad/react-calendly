@@ -28,7 +28,7 @@ export class InlineWidget extends React.Component<Props> {
       window.Calendly.initInlineWidget({
         url: this.props.url,
         parentElement: this.widgetParentContainerRef.current!,
-        prefill: this.props.prefill || null,
+        prefill: this.props.prefill,
       })
     }
   }
