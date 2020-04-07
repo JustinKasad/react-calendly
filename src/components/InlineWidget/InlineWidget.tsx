@@ -33,12 +33,20 @@ export class InlineWidget extends React.Component<Props> {
     }
   }
 
+  createURL() {
+    const { prefill } = this.props;
+    if(!prefill){
+      return this.props.url; 
+    }
+    return `${this.props.url}?${prefill.name != null ? `name=${prefill.name}&` : ""}${prefill.firstname != null ? `first_name=${prefill.firstname}&` : ""}${prefill.lastname != null ? `last_name=${prefill.lastname}&` : ""}${prefill.email != null ? `email=${prefill.email}` : ""}`
+  }
+
   render() {
     return (
       <div
         className="calendly-inline-widget"
         style={this.props.styles || defaultStyles}
-        data-url={this.props.url}
+        data-url={this.createURL()}
         ref={this.widgetParentContainerRef}
       ></div>
     );
