@@ -4,6 +4,7 @@ import { CALENDLY_SCRIPT_SOURCE } from "../../constants";
 
 export interface Props {
   url: string;
+  prefill?: Object;
   styles?: React.CSSProperties | undefined;
 }
 
@@ -26,7 +27,8 @@ export class InlineWidget extends React.Component<Props> {
     } else {
       window.Calendly.initInlineWidget({
         url: this.props.url,
-        parentElement: this.widgetParentContainerRef.current!
+        parentElement: this.widgetParentContainerRef.current!,
+        prefill: this.props.prefill || null,
       })
     }
   }
