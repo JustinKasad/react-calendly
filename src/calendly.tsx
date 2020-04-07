@@ -8,7 +8,12 @@ import {
 export interface ICalendly {
   initInlineWidget(options: {
     url: string;
-    prefill?: Object;
+    prefill?: {
+      name?: string;
+      firstname?: string;
+      lastname?: string;
+      email?: string;
+    };
     parentElement: HTMLElement;
   }): void;
   showPopupWidget(url: string): void;
